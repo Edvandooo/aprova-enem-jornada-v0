@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
-import { Home, BookOpen, Award, BarChart2, Users, Calendar, Settings, Calculator, Book, Flask, Globe } from 'lucide-react';
+import { Home, BookOpen, Award, BarChart2, Users, Calendar, Settings, Calculator, Book, Beaker, Globe } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface SidebarLayoutProps {
@@ -57,7 +57,7 @@ const AppSidebar: React.FC<SidebarLayoutProps> = ({ className }) => {
       path: '/linguagens',
     },
     {
-      icon: Flask,
+      icon: Beaker,
       label: 'C. Natureza',
       path: '/ciencias-natureza',
     },

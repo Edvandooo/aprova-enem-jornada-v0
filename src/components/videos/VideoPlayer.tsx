@@ -1,6 +1,5 @@
 
-import React, { useState } from 'react';
-import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
+import React from 'react';
 
 interface VideoPlayerProps {
   videoId: string;
@@ -8,12 +7,6 @@ interface VideoPlayerProps {
 }
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoId, title }) => {
-  const [playing, setPlaying] = useState(false);
-  const [muted, setMuted] = useState(false);
-
-  // Os controles do iframe do YouTube não são totalmente controlados através da API,
-  // então os botões abaixo serviriam mais para uma futura implementação avançada
-  
   return (
     <div className="space-y-3">
       <div className="aspect-video w-full rounded-lg overflow-hidden shadow-lg bg-black">
