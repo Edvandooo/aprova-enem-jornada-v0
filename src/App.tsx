@@ -13,6 +13,9 @@ import AppLayout from "./components/layout/AppLayout";
 import Dashboard from "./pages/Dashboard";
 import VideoLibrary from "./pages/VideoLibrary";
 import VideoPage from "./pages/VideoPage";
+import Comunidade from "./pages/Comunidade";
+import Matematica from "./pages/Matematica";
+import Linguagens from "./pages/Linguagens";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +30,9 @@ const App = () => (
             <Route index element={<Dashboard />} />
             <Route path="biblioteca" element={<VideoLibrary />} />
             <Route path="video/:id" element={<VideoPage />} />
+            <Route path="comunidade" element={<Comunidade />} />
+            <Route path="matematica" element={<Matematica />} />
+            <Route path="linguagens" element={<Linguagens />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

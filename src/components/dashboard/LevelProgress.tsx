@@ -21,7 +21,7 @@ const LevelProgress: React.FC<LevelProgressProps> = ({ currentLevel, currentXP, 
           </div>
           <div>
             <h4 className="font-medium">Nível {currentLevel}</h4>
-            <div className="text-xs text-muted-foreground">Aventureiro</div>
+            <div className="text-xs text-muted-foreground">Novato</div>
           </div>
         </div>
         <div className="flex flex-col items-end">

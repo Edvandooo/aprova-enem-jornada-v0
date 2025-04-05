@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
-import { Home, BookOpen, Award, BarChart2, Users, Calendar, Settings } from 'lucide-react';
+import { Home, BookOpen, Award, BarChart2, Users, Calendar, Settings, Calculator, Book, Flask, Globe } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface SidebarLayoutProps {
@@ -10,6 +10,8 @@ interface SidebarLayoutProps {
 }
 
 const AppSidebar: React.FC<SidebarLayoutProps> = ({ className }) => {
+  const location = useLocation();
+  
   const menuItems = [
     {
       icon: Home,
@@ -22,6 +24,11 @@ const AppSidebar: React.FC<SidebarLayoutProps> = ({ className }) => {
       path: '/biblioteca',
     },
     {
+      icon: Users,
+      label: 'Comunidade',
+      path: '/comunidade',
+    },
+    {
       icon: Award,
       label: 'Conquistas',
       path: '/conquistas',
@@ -32,19 +39,32 @@ const AppSidebar: React.FC<SidebarLayoutProps> = ({ className }) => {
       path: '/desempenho',
     },
     {
-      icon: Users,
-      label: 'Comunidade',
-      path: '/comunidade',
-    },
-    {
       icon: Calendar,
       label: 'Missões',
       path: '/missoes',
     },
+  ];
+
+  const materias = [
     {
-      icon: Settings,
-      label: 'Configurações',
-      path: '/configuracoes',
+      icon: Calculator,
+      label: 'Matemática',
+      path: '/matematica',
+    },
+    {
+      icon: Book,
+      label: 'Linguagens',
+      path: '/linguagens',
+    },
+    {
+      icon: Flask,
+      label: 'C. Natureza',
+      path: '/ciencias-natureza',
+    },
+    {
+      icon: Globe,
+      label: 'C. Humanas',
+      path: '/ciencias-humanas',
     },
   ];
 
@@ -63,7 +83,31 @@ const AppSidebar: React.FC<SidebarLayoutProps> = ({ className }) => {
               {menuItems.map((item) => (
                 <SidebarMenuItem key={item.path}>
                   <SidebarMenuButton asChild>
-                    <Link to={item.path} className="flex items-center gap-3">
+                    <Link to={item.path} className={cn(
+                      "flex items-center gap-3",
+                      location.pathname === item.path ? "text-enem-primary" : ""
+                    )}>
+                      <item.icon size={20} />
+                      <span>{item.label}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        
+        <SidebarGroup>
+          <SidebarGroupLabel className="text-sidebar-foreground/70 mt-4">Matérias</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {materias.map((item) => (
+                <SidebarMenuItem key={item.path}>
+                  <SidebarMenuButton asChild>
+                    <Link to={item.path} className={cn(
+                      "flex items-center gap-3",
+                      location.pathname === item.path ? "text-enem-primary" : ""
+                    )}>
                       <item.icon size={20} />
                       <span>{item.label}</span>
                     </Link>
@@ -81,7 +125,7 @@ const AppSidebar: React.FC<SidebarLayoutProps> = ({ className }) => {
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-sm font-medium truncate">Estudante ENEM</p>
-            <p className="text-xs text-sidebar-foreground/70 truncate">Nível 3 • 430 XP</p>
+            <p className="text-xs text-sidebar-foreground/70 truncate">Nível 1 • 0 XP</p>
           </div>
         </div>
       </div>

@@ -8,12 +8,12 @@ import LevelProgress from '@/components/dashboard/LevelProgress';
 import AchievementsBadges from '@/components/dashboard/AchievementsBadges';
 
 const Dashboard = () => {
-  // Sample data for the components
+  // Sample data for the components - todos com valores zerados para um novo usuário
   const subjects = [
-    { name: 'Linguagens', value: 65, color: '#4C2FFC' },
-    { name: 'Matemática', value: 40, color: '#00C2FF' },
-    { name: 'Ciências Humanas', value: 75, color: '#FF9500' },
-    { name: 'Ciências da Natureza', value: 30, color: '#4CAF50' },
+    { name: 'Linguagens', value: 0, color: '#4C2FFC' },
+    { name: 'Matemática', value: 0, color: '#00C2FF' },
+    { name: 'Ciências Humanas', value: 0, color: '#FF9500' },
+    { name: 'Ciências da Natureza', value: 0, color: '#4CAF50' },
   ];
 
   const missions = [
@@ -22,7 +22,7 @@ const Dashboard = () => {
       title: 'Assista 3 vídeos de Matemática',
       description: 'Complete esta missão para ganhar 50 XP',
       reward: 50,
-      completed: true,
+      completed: false,
     },
     {
       id: '2',
@@ -43,35 +43,35 @@ const Dashboard = () => {
   const recentVideos = [
     {
       id: '1',
-      title: 'Funções do 1º Grau - Matemática para o ENEM',
+      title: 'Porcentagem - Matemática para o ENEM',
       subject: 'Matemática',
-      thumbnail: 'https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg',
+      thumbnail: 'https://i.ytimg.com/vi/EfLS_euI870/hqdefault.jpg',
       duration: '15:30',
-      progress: 75,
+      progress: 0,
     },
     {
       id: '2',
-      title: 'Interpretação de Texto - Dicas Essenciais',
-      subject: 'Linguagens',
-      thumbnail: 'https://i.ytimg.com/vi/6Ejga4kJUts/hqdefault.jpg',
+      title: 'Frações - Conceitos Básicos',
+      subject: 'Matemática',
+      thumbnail: 'https://i.ytimg.com/vi/qdMJf_r8w6s/hqdefault.jpg',
       duration: '23:45',
-      progress: 100,
+      progress: 0,
     },
     {
       id: '3',
-      title: 'Guerra Fria - História Mundial Contemporânea',
-      subject: 'Ciências Humanas',
-      thumbnail: 'https://i.ytimg.com/vi/BeyEGebJ1zI/hqdefault.jpg',
+      title: 'Regra de Três - Explicação Completa',
+      subject: 'Matemática',
+      thumbnail: 'https://i.ytimg.com/vi/LR8jQ_W8WY8/hqdefault.jpg',
       duration: '18:20',
-      progress: 30,
+      progress: 0,
     },
   ];
 
   const progressData = [
-    { name: 'Linguagens', completed: 65, total: 100 },
-    { name: 'Matemática', completed: 40, total: 100 },
-    { name: 'C. Humanas', completed: 75, total: 100 },
-    { name: 'C. Natureza', completed: 30, total: 100 },
+    { name: 'Linguagens', completed: 0, total: 100 },
+    { name: 'Matemática', completed: 0, total: 100 },
+    { name: 'C. Humanas', completed: 0, total: 100 },
+    { name: 'C. Natureza', completed: 0, total: 100 },
   ];
 
   const achievements = [
@@ -80,14 +80,14 @@ const Dashboard = () => {
       name: 'Primeira Aula',
       description: 'Assistiu à primeira videoaula completa',
       icon: '/placeholder.svg',
-      unlocked: true,
+      unlocked: false,
     },
     {
       id: '2',
       name: 'Estudioso',
       description: 'Assistiu a 10 videoaulas completas',
       icon: '/placeholder.svg',
-      unlocked: true,
+      unlocked: false,
     },
     {
       id: '3',
@@ -101,7 +101,7 @@ const Dashboard = () => {
       name: 'Maratonista',
       description: 'Assistiu a 5 videoaulas em um único dia',
       icon: '/placeholder.svg',
-      unlocked: true,
+      unlocked: false,
     },
     {
       id: '5',
@@ -116,7 +116,7 @@ const Dashboard = () => {
     <div className="space-y-6">
       <h1 className="text-2xl md:text-3xl font-bold">Portal do Aventureiro</h1>
       
-      <LevelProgress currentLevel={3} currentXP={430} xpForNextLevel={1000} />
+      <LevelProgress currentLevel={1} currentXP={0} xpForNextLevel={1000} />
       
       <AchievementsBadges achievements={achievements} />
 
