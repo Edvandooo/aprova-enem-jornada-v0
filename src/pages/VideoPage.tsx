@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import VideoPlayer from '@/components/videos/VideoPlayer';
@@ -10,36 +9,34 @@ import { Card, CardContent } from '@/components/ui/card';
 const VideoPage = () => {
   const { id } = useParams<{ id: string }>();
   
-  // Mock data for a single video
-  // In a real application, you would fetch this data based on the ID
+  // Mock data para o vídeo de Porcentagem
   const video = {
     id: id || '1',
-    title: 'Funções do 1º Grau - Matemática para o ENEM',
-    description: 'Nesta aula, você aprenderá tudo sobre funções do primeiro grau, um conteúdo essencial para o ENEM. Vamos abordar definição, gráficos, domínio, imagem e resolução de problemas práticos.',
-    youtubeId: id || 'EfLS_euI870', // Use o ID da URL em vez de um ID mockado
+    title: 'Porcentagem para o ENEM - Curso Completo',
+    description: 'Nesta aula completa, você aprenderá todos os detalhes sobre Porcentagem, um conteúdo fundamental para o ENEM. Vamos abordar cálculos, técnicas e estratégias para resolver problemas envolvendo porcentagens.',
+    youtubeId: id || 'EfLS_euI870',
     views: 1420,
     likes: 325,
     subject: 'Matemática',
-    topic: 'Funções',
-    instructor: 'Prof. Edvando Sousa',
+    topic: 'Porcentagem',
+    instructor: 'Prof. Sandro Silva',
     relatedVideos: [
       {
         id: 'qdMJf_r8w6s',
-        title: 'Funções do 2º Grau - Matemática para o ENEM',
-        thumbnail: 'https://i.ytimg.com/vi/6Ejga4kJUts/hqdefault.jpg',
-        duration: '18:45',
+        title: 'Frações - Conceitos Básicos e Operações',
+        thumbnail: 'https://i.ytimg.com/vi/qdMJf_r8w6s/hqdefault.jpg',
+        duration: '28:45',
       },
       {
         id: 'LR8jQ_W8WY8',
-        title: 'Inequações - Resolução Passo a Passo',
-        thumbnail: 'https://i.ytimg.com/vi/BeyEGebJ1zI/hqdefault.jpg',
-        duration: '16:20',
+        title: 'Regra de Três - Aprenda de uma Vez por Todas',
+        thumbnail: 'https://i.ytimg.com/vi/LR8jQ_W8WY8/hqdefault.jpg',
+        duration: '22:17',
       },
     ],
   };
 
   useEffect(() => {
-    // In a real application, you would track video progress here
     console.log(`Video ${id} loaded`);
   }, [id]);
 
