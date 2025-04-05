@@ -16,7 +16,7 @@ const VideoPage = () => {
     id: id || '1',
     title: 'Funções do 1º Grau - Matemática para o ENEM',
     description: 'Nesta aula, você aprenderá tudo sobre funções do primeiro grau, um conteúdo essencial para o ENEM. Vamos abordar definição, gráficos, domínio, imagem e resolução de problemas práticos.',
-    youtubeId: 'dQw4w9WgXcQ', // This would be the actual YouTube video ID
+    youtubeId: id || 'EfLS_euI870', // Use o ID da URL em vez de um ID mockado
     views: 1420,
     likes: 325,
     subject: 'Matemática',
@@ -24,13 +24,13 @@ const VideoPage = () => {
     instructor: 'Prof. Edvando Sousa',
     relatedVideos: [
       {
-        id: '2',
+        id: 'qdMJf_r8w6s',
         title: 'Funções do 2º Grau - Matemática para o ENEM',
         thumbnail: 'https://i.ytimg.com/vi/6Ejga4kJUts/hqdefault.jpg',
         duration: '18:45',
       },
       {
-        id: '3',
+        id: 'LR8jQ_W8WY8',
         title: 'Inequações - Resolução Passo a Passo',
         thumbnail: 'https://i.ytimg.com/vi/BeyEGebJ1zI/hqdefault.jpg',
         duration: '16:20',
@@ -56,7 +56,7 @@ const VideoPage = () => {
       
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 space-y-6">
-          <VideoPlayer videoId={video.youtubeId} />
+          <VideoPlayer videoId={video.youtubeId} title={video.title} />
           
           <div className="bg-card rounded-lg p-4 border">
             <div className="flex justify-between items-center mb-4">
